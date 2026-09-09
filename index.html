@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seyeye免费高清观看-热门影视剧集在线免费高清观看指南</title>
+    <meta name="description" content="seyeye免费高清观看平台提供丰富的高清影视剧集在线观看服务，涵盖热门电影、电视剧、动漫、综艺等各类内容。了解观看方法、常见问题与使用指南，畅享高清流畅的观影体验。">
+    <meta name="keywords" content="seyeye,免费高清观看,在线观看,高清影视,免费影视,视频平台">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: #007aff;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        /* header */
+        .site-header {
+            background: linear-gradient(135deg, #1b1e2b 0%, #2a2e42 100%);
+            color: #fff;
+            padding: 18px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .logo-area .logo-desc {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 26px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #dfe1ee;
+            font-size: 0.95rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .main-nav a:hover {
+            color: #fff;
+            border-bottom-color: #ff9f43;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            width: 260px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+        }
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 8px 14px;
+            font-size: 0.9rem;
+            color: #333;
+            background: transparent;
+        }
+        .search-box button {
+            background: #ff9f43;
+            border: none;
+            color: #1b1e2b;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .search-box button:hover {
+            background: #ffb66e;
+        }
+        /* hero */
+        .hero {
+            background: linear-gradient(145deg, #202438 0%, #343a55 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,159,67,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero h2 {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 28px auto;
+            opacity: 0.85;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-btn {
+            background: #ff9f43;
+            color: #1b1e2b;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255,159,67,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        .hero-btn:hover {
+            background: #ffb66e;
+            transform: translateY(-2px);
+        }
+        /* section title */
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            padding-left: 14px;
+            border-left: 5px solid #ff9f43;
+            color: #1b1e2b;
+        }
+        .section-sub {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+        /* category chips */
+        .category-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .category-chip {
+            background: #fff;
+            border: 1px solid #e2e4ea;
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            color: #333;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .category-chip:hover {
+            border-color: #ff9f43;
+            color: #ff9f43;
+            background: #fff8f0;
+        }
+        /* content cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .content-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .card-poster {
+            height: 220px;
+            background: #e8eaf0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            font-size: 3rem;
+            color: #aab;
+            position: relative;
+        }
+        .card-poster .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #ff9f43;
+            color: #1b1e2b;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+        .card-info {
+            padding: 12px 14px;
+        }
+        .card-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1b1e2b;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-info .meta {
+            font-size: 0.8rem;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* feature section */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+        }
+        .feature-item {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-top: 4px solid #ff9f43;
+        }
+        .feature-item .icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .feature-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #1b1e2b;
+        }
+        .feature-item p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        /* faq */
+        .faq-list {
+            margin: 30px 0;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .faq-item h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1b1e2b;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .faq-item h3::before {
+            content: "Q";
+            background: #ff9f43;
+            color: #1b1e2b;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .faq-item p {
+            color: #444;
+            padding-left: 32px;
+            font-size: 0.95rem;
+        }
+        /* guide section */
+        .guide-steps {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+        .guide-steps h3 {
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            color: #1b1e2b;
+        }
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .step-num {
+            background: #ff9f43;
+            color: #1b1e2b;
+            font-weight: 800;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+        .step-content p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        /* notice */
+        .notice-box {
+            background: #fff8f0;
+            border-left: 5px solid #ff9f43;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 30px 0;
+            font-size: 0.95rem;
+            color: #444;
+        }
+        /* footer */
+        .site-footer {
+            background: #1b1e2b;
+            color: #b0b3c5;
+            padding: 40px 0 20px 0;
+            margin-top: 50px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 14px;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .footer-col a {
+            color: #b0b3c5;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #ff9f43;
+        }
+        .footer-bottom {
+            border-top: 1px solid #2e3245;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7f8299;
+        }
+        /* responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .search-box {
+                width: 100%;
+                max-width: 320px;
+            }
+            .main-nav ul {
+                justify-content: center;
+                gap: 16px;
+                margin-top: 6px;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .card-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 14px;
+            }
+            .card-poster {
+                height: 170px;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .guide-steps {
+                padding: 20px;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <h1>seyeye 免费高清观看</h1>
+                <div class="logo-desc">高清影视 · 免费畅享</div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">电影</a></li>
+                    <li><a href="#">电视剧</a></li>
+                    <li><a href="#">动漫</a></li>
+                    <li><a href="#">综艺</a></li>
+                    <li><a href="#">纪录片</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索影视、剧名、演员...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>海量高清影视免费在线观看</h2>
+            <p>seyeye 免费高清观看平台，汇集热门电影、电视剧、动漫、综艺等内容。无需安装，打开即看，畅享高清流畅观影体验。</p>
+            <a href="#" class="hero-btn">立即开始观影</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 热门分类 -->
+        <section>
+            <h2 class="section-title">热门频道</h2>
+            <p class="section-sub">精选分类，快速找到你想看的</p>
+            <div class="category-row">
+                <span class="category-chip">🔥 热门电影</span>
+                <span class="category-chip">📺 热播电视剧</span>
+                <span class="category-chip">🎬 最新大片</span>
+                <span class="category-chip">🌈 动漫番剧</span>
+                <span class="category-chip">🎤 综艺娱乐</span>
+                <span class="category-chip">🌍 纪录片</span>
+                <span class="category-chip">💕 爱情片</span>
+                <span class="category-chip">😆 喜剧片</span>
+                <span class="category-chip">🔫 动作片</span>
+                <span class="category-chip">🧠 科幻片</span>
+            </div>
+        </section>
+
+        <!-- 正在热播 -->
+        <section>
+            <h2 class="section-title">正在热播</h2>
+            <div class="card-grid">
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #3a3f5a, #5a607f);">
+                        <span class="tag">热播</span>
+                        <span>🎬</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>长风渡</h3>
+                        <div class="meta"><span>古装 · 爱情</span><span>更新至26集</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #4a3a5a, #6a4a7f);">
+                        <span class="tag">高口碑</span>
+                        <span>📺</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>漫长的季节</h3>
+                        <div class="meta"><span>悬疑 · 剧情</span><span>全12集</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #2a5a4a, #4a7a6a);">
+                        <span class="tag">高分</span>
+                        <span>🌌</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>流浪地球2</h3>
+                        <div class="meta"><span>科幻 · 冒险</span><span>HD高清</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #5a3a2a, #7a5a4a);">
+                        <span class="tag">新番</span>
+                        <span>⚔️</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>鬼灭之刃 锻刀村篇</h3>
+                        <div class="meta"><span>动漫 · 热血</span><span>全11集</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #3a2a5a, #5a3a7a);">
+                        <span class="tag">口碑</span>
+                        <span>🎭</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>狂飙</h3>
+                        <div class="meta"><span>犯罪 · 剧情</span><span>全39集</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #2a4a5a, #4a6a7a);">
+                        <span class="tag">热门</span>
+                        <span>🎤</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>乘风2024</h3>
+                        <div class="meta"><span>综艺 · 音乐</span><span>更新至第8期</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新更新 -->
+        <section>
+            <h2 class="section-title">最新更新</h2>
+            <p class="section-sub">每日更新，好剧不错过</p>
+            <div class="card-grid">
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #6a4a2a, #8a6a4a);">
+                        <span class="tag">更新</span>
+                        <span>🎞️</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>庆余年2</h3>
+                        <div class="meta"><span>古装 · 权谋</span><span>更新至18集</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #4a5a2a, #6a7a4a);">
+                        <span class="tag">新</span>
+                        <span>🎬</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>沙丘2</h3>
+                        <div class="meta"><span>科幻 · 冒险</span><span>HD高清</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #5a2a4a, #7a4a6a);">
+                        <span class="tag">热播</span>
+                        <span>📺</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>与凤行</h3>
+                        <div class="meta"><span>古装 · 仙侠</span><span>更新至30集</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #2a3a6a, #4a5a8a);">
+                        <span class="tag">推荐</span>
+                        <span>🎥</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>周处除三害</h3>
+                        <div class="meta"><span>犯罪 · 动作</span><span>HD高清</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #6a2a2a, #8a4a4a);">
+                        <span class="tag">高分</span>
+                        <span>🌠</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>奥本海默</h3>
+                        <div class="meta"><span>传记 · 剧情</span><span>HD高清</span></div>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-poster" style="background: linear-gradient(145deg, #2a6a5a, #4a8a7a);">
+                        <span class="tag">更新</span>
+                        <span>🧸</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>熊出没·逆转时空</h3>
+                        <div class="meta"><span>动画 · 亲子</span><span>HD高清</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 特色功能 -->
+        <section>
+            <h2 class="section-title">平台特色</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">⚡</div>
+                    <h3>极速播放</h3>
+                    <p>多线路智能切换，加载速度快，播放流畅不卡顿，支持高清画质自动调节。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🆓</div>
+                    <h3>完全免费</h3>
+                    <p>无需注册登录，所有影视内容全部免费观看，没有隐藏收费项目。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📱</div>
+                    <h3>多端适配</h3>
+                    <p>支持手机、平板、电脑等多种设备访问，随时随地都能享受观影乐趣。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🔍</div>
+                    <h3>智能搜索</h3>
+                    <p>支持片名、演员、导演等多维度搜索，快速定位你想要的影视内容。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用指南 -->
+        <section class="guide-steps">
+            <h3>📖 seyeye 免费高清观看使用指南</h3>
+            <div class="step-list">
+                <div class="step-item">
+                    <span class="step-num">1</span>
+                    <div class="step-content">
+                        <p><strong>访问网站</strong>：在浏览器地址栏输入 seyeye 官网地址，或在搜索引擎中搜索“seyeye免费高清观看”，进入首页。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">2</span>
+                    <div class="step-content">
+                        <p><strong>浏览或搜索</strong>：通过首页分类导航浏览影视内容，也可以使用顶部搜索框输入片名快速查找。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">3</span>
+                    <div class="step-content">
+                        <p><strong>点击播放</strong>：进入影视详情页后，选择播放线路和清晰度，点击播放即可在线观看。建议保持网络畅通以获得最佳体验。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">4</span>
+                    <div class="step-content">
+                        <p><strong>收藏与追剧</strong>：部分内容支持收藏功能，方便下次继续观看。关注“最新更新”栏目，及时获取剧集更新动态。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 版权提醒 -->
+        <div class="notice-box">
+            <strong>⚠️ 温馨提示：</strong> seyeye 免费高清观看平台仅提供影视信息索引与在线观看技术服务，所有视频资源均来自网络公开内容。建议用户选择正规授权渠道观看影视作品，尊重版权方合法权益。如涉及侵权问题，请与相关版权方联系处理。
+        </div>
+
+        <!-- 常见问题 -->
+        <section>
+            <h2 class="section-title">常见问题 FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>seyeye 免费高清观看需要注册账号吗？</h3>
+                    <p>不需要。平台提供免注册直接观看服务，打开网页即可浏览和播放所有免费影视内容，省去繁琐的注册流程。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>为什么有些视频播放卡顿或无法加载？</h3>
+                    <p>卡顿可能与网络状况、浏览器兼容性或当前播放线路有关。建议尝试切换播放线路、更换浏览器或刷新页面。同时检查本地网络带宽是否充足。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>seyeye 上的影视内容是否全部免费？</h3>
+                    <p>是的，平台上的所有影视资源均免费向用户开放。我们不收取任何观看费用，也不存在隐藏扣费项目，用户可以放心观看。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>手机端和电脑端都可以使用吗？</h3>
+                    <p>完全可以。网站采用响应式设计，自动适配不同屏幕尺寸。手机、平板、电脑均可获得良好的浏览和播放体验。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>视频更新频率如何？</h3>
+                    <p>热门剧集和电影会第一时间同步更新，通常每日都有新增内容。建议关注“最新更新”栏目，及时掌握资源动态。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 内容推荐说明 -->
+        <section>
+            <h2 class="section-title">观影推荐与说明</h2>
+            <p class="section-sub">帮助您更好地使用 seyeye 免费高清观看平台</p>
+            <div style="background: #fff; border-radius: 14px; padding: 24px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+                <p style="margin-bottom: 14px; color: #444;">无论您是剧迷、影迷还是动漫爱好者，seyeye 免费高清观看都能满足您的需求。平台内容覆盖多个类型与地区，包括：</p>
+                <ul style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
+                    <li style="background: #f0f2f5; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">🎬 院线大片</li>
+                    <li style="background: #f0f2f5; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">📺 国产剧集</li>
+                    <li style="background: #f0f2f5; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">🇰🇷 韩剧</li>
+                    <li style="background: #f0f2f5; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">🇺🇸 美剧</li>
+                    <li style="background: #f0f2f5; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">🇯🇵 日剧动漫</li>
+                    <li style="background: #f0f2f5; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">🎥 纪录片</li>
+                    <li style="background: #f0f2f5; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">🎤 热门综艺</li>
+                </ul>
+                <p style="color: #555; font-size: 0.95rem;">平台推荐算法会根据您的观影记录，智能推荐可能感兴趣的内容，让发现好剧变得更加轻松。同时，每部影视都提供剧情简介、演员表、评分等信息，帮助您快速决策。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>seyeye 免费高清观看</h4>
+                    <ul>
+                        <li>海量高清影视资源</li>
+                        <li>每日及时更新</li>
+                        <li>全设备流畅播放</li>
+                        <li>完全免费无套路</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>内容分类</h4>
+                    <ul>
+                        <li><a href="#">热门电影</a></li>
+                        <li><a href="#">电视剧</a></li>
+                        <li><a href="#">动漫番剧</a></li>
+                        <li><a href="#">综艺纪录片</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">播放问题排查</a></li>
+                        <li><a href="#">常见问题解答</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 seyeye 免费高清观看平台 | 本页面仅供技术交流与学习演示</p>
+                <p style="margin-top: 6px;">请支持正版影视，合理使用网络资源</p>
+            </div>
+        </div>
+    </footer>
+</body>
+                      </html>

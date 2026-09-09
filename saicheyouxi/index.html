@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>赛车游戏在线玩-热门竞速游戏推荐与极速驾驶指南</title>
+    <meta name="description" content="赛车游戏在线玩，精选多款无需下载的网页版竞速游戏，涵盖3D极速、街头狂飙、赛车漂移等多种玩法，即刻开启你的速度之旅。">
+    <meta name="keywords" content="赛车游戏在线玩,网页赛车游戏,极速竞速,3D赛车,漂移游戏,在线飙车">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #0b0f1a;
+            color: #eef2f8;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            color: #4aa8ff;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #a0d0ff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Header ===== */
+        .site-header {
+            background: #111720;
+            border-bottom: 2px solid #1f2a3a;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(6px);
+            background: rgba(13, 18, 28, 0.92);
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+            filter: drop-shadow(0 0 6px #00b3ff);
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #fff, #91d6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo-text span {
+            color: #ffb347;
+            -webkit-text-fill-color: #ffb347;
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+        .main-nav a {
+            color: #c9d6e8;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #fff;
+            border-bottom-color: #ffb347;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            padding: 50px 0 40px;
+            background: radial-gradient(circle at 80% 20%, #1a2c4e 0%, #0b0f1a 70%);
+            border-bottom: 1px solid #1f2a3a;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1 1 350px;
+        }
+        .hero-content h1 {
+            font-size: 2.6rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff, #8bcbff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #b0c2d9;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            transition: 0.25s;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background: #ff8c1a;
+            color: #0b0f1a;
+            box-shadow: 0 4px 20px rgba(255, 140, 26, 0.3);
+        }
+        .btn-primary:hover {
+            background: #ffa64d;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border-color: #4aa8ff;
+            color: #4aa8ff;
+        }
+        .btn-outline:hover {
+            background: #4aa8ff;
+            color: #0b0f1a;
+            border-color: #4aa8ff;
+        }
+        .hero-stats {
+            flex: 0 1 350px;
+            background: rgba(20, 30, 45, 0.7);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid #2b3b55;
+            backdrop-filter: blur(8px);
+        }
+        .hero-stats h3 {
+            color: #ffb347;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .stat-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #2f405c;
+            padding-bottom: 6px;
+        }
+        .stat-label {
+            color: #a5b9d4;
+        }
+        .stat-value {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* ===== Section通用 ===== */
+        .section {
+            padding: 45px 0;
+        }
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 28px;
+            background: linear-gradient(180deg, #ffb347, #ff8c1a);
+            border-radius: 6px;
+        }
+
+        /* ===== 游戏卡片 ===== */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .game-card {
+            background: #141d2b;
+            border-radius: 18px;
+            border: 1px solid #243140;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .game-card:hover {
+            transform: translateY(-6px);
+            border-color: #3d5a80;
+            box-shadow: 0 12px 30px rgba(0, 60, 120, 0.4);
+        }
+        .game-thumb {
+            height: 160px;
+            background: linear-gradient(145deg, #1c2b40, #0e1622);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #ffb347;
+            border-bottom: 1px solid #1f2f42;
+        }
+        .game-thumb i {
+            font-style: normal;
+            filter: drop-shadow(0 4px 10px rgba(255, 150, 0, 0.4));
+        }
+        .game-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #ffd966;
+            letter-spacing: 0.5px;
+        }
+        .game-info {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .game-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .game-info p {
+            color: #9aadc9;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #7f93af;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .game-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .play-btn {
+            text-align: center;
+            background: #1f3a5c;
+            border-radius: 40px;
+            padding: 10px 0;
+            font-weight: 700;
+            color: #dcebff;
+            transition: 0.2s;
+            border: 1px solid #2e4a70;
+        }
+        .play-btn:hover {
+            background: #ff8c1a;
+            color: #0b0f1a;
+            border-color: #ff8c1a;
+        }
+
+        /* ===== 分类条 ===== */
+        .category-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .category-chip {
+            background: #1b2637;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: 1px solid #2a3d57;
+            transition: 0.2s;
+            color: #b7c9e0;
+            font-weight: 500;
+        }
+        .category-chip:hover,
+        .category-chip.active {
+            background: #2b4a6e;
+            border-color: #4aa8ff;
+            color: #fff;
+        }
+
+        /* ===== 双栏 ===== */
+        .feature-flex {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .feature-main {
+            flex: 2 1 500px;
+        }
+        .feature-side {
+            flex: 1 1 300px;
+        }
+        .content-block {
+            background: #121a27;
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid #1f2d40;
+        }
+        .content-block h3 {
+            font-size: 1.4rem;
+            color: #ffd966;
+            margin-bottom: 12px;
+        }
+        .content-block p {
+            margin-bottom: 15px;
+            color: #c0d0e4;
+        }
+        .content-block ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+            color: #b0c6df;
+        }
+        .content-block li {
+            margin-bottom: 8px;
+        }
+
+        /* ===== 榜单 ===== */
+        .rank-list {
+            list-style: none;
+        }
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #1f2d40;
+            gap: 15px;
+        }
+        .rank-num {
+            background: #1f2f45;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #ffb347;
+        }
+        .rank-name {
+            flex: 1;
+            font-weight: 600;
+        }
+        .rank-tag {
+            background: #1a304a;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #8ab8ff;
+        }
+
+        /* ===== 信息条 ===== */
+        .info-highlight {
+            background: linear-gradient(135deg, #1c2b40, #0f1926);
+            border-left: 5px solid #ff8c1a;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .info-highlight strong {
+            color: #ffb347;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            background: #121c2a;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 15px;
+            border: 1px solid #1e2c3e;
+        }
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .faq-question::before {
+            content: 'Q';
+            background: #ff8c1a;
+            color: #0b0f1a;
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .faq-answer {
+            padding-left: 36px;
+            color: #a8bbd3;
+        }
+        .faq-answer::before {
+            content: 'A';
+            background: #2a4e77;
+            color: #fff;
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+            vertical-align: middle;
+        }
+
+        /* ===== footer ===== */
+        .site-footer {
+            background: #0d131e;
+            border-top: 2px solid #1c2735;
+            padding: 30px 0;
+            margin-top: 40px;
+            text-align: center;
+            color: #6c7f98;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #8da3bf;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 1.9rem;
+            }
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            .main-nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                margin-top: 8px;
+            }
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .game-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .hero {
+                padding: 30px 0;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            .game-thumb {
+                height: 130px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <span class="logo-icon">🏎️</span>
+                <span class="logo-text">极速<span>车库</span></span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">赛车游戏</a></li>
+                    <li><a href="#">新游推荐</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">驾驶技巧</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero区域 -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>赛车游戏在线玩<br>极速狂飙 无需下载</h1>
+                    <p>精选数十款高品质网页版竞速游戏，无论是3D写实模拟还是像素街头飙车，打开浏览器即刻开跑。低门槛、高流畅度，随时享受速度与激情。</p>
+                    <div class="btn-group">
+                        <a href="#hot-games" class="btn btn-primary">🎮 开始飙车</a>
+                        <a href="#guide" class="btn btn-outline">📖 新手指南</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <h3>🔥 热门数据</h3>
+                    <div class="stat-list">
+                        <div class="stat-item"><span class="stat-label">在线玩家</span><span class="stat-value">8,240+</span></div>
+                        <div class="stat-item"><span class="stat-label">游戏数量</span><span class="stat-value">156款</span></div>
+                        <div class="stat-item"><span class="stat-label">今日新增</span><span class="stat-value">3款</span></div>
+                        <div class="stat-item"><span class="stat-label">最受欢迎</span><span class="stat-value">🏆 极速漂移</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门游戏 -->
+        <section class="section" id="hot-games">
+            <div class="container">
+                <h2 class="section-title">🎯 热门赛车游戏在线玩</h2>
+                <div class="category-row">
+                    <span class="category-chip active">全部</span>
+                    <span class="category-chip">3D竞速</span>
+                    <span class="category-chip">漂移</span>
+                    <span class="category-chip">街头狂飙</span>
+                    <span class="category-chip">越野拉力</span>
+                </div>
+                <div class="game-grid">
+                    <article class="game-card">
+                        <div class="game-thumb"><i>🏁</i><span class="game-badge">🔥 火爆</span></div>
+                        <div class="game-info">
+                            <h3>极速漂移</h3>
+                            <p>3D写实风格，真实物理引擎，体验完美漂移过弯。</p>
+                            <div class="game-meta"><span>⭐ 9.2</span><span>共2.1万人玩</span></div>
+                            <a href="#" class="play-btn">立即启动</a>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <div class="game-thumb"><i>🏎️</i><span class="game-badge">新游</span></div>
+                        <div class="game-info">
+                            <h3>街头狂飙</h3>
+                            <p>城市赛道，夜晚霓虹，改装赛车极限挑战。</p>
+                            <div class="game-meta"><span>⭐ 8.8</span><span>共1.4万人玩</span></div>
+                            <a href="#" class="play-btn">立即启动</a>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <div class="game-thumb"><i>🏜️</i></div>
+                        <div class="game-info">
+                            <h3>越野拉力赛</h3>
+                            <p>沙漠、泥泞、山路，征服一切复杂地形。</p>
+                            <div class="game-meta"><span>⭐ 8.5</span><span>共9.8千人玩</span></div>
+                            <a href="#" class="play-btn">立即启动</a>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <div class="game-thumb"><i>🚗</i><span class="game-badge">经典</span></div>
+                        <div class="game-info">
+                            <h3>经典方程式</h3>
+                            <p>F1式赛道竞速，体验顶级速度感。</p>
+                            <div class="game-meta"><span>⭐ 9.0</span><span>共1.8万人玩</span></div>
+                            <a href="#" class="play-btn">立即启动</a>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <div class="game-thumb"><i>🏍️</i></div>
+                        <div class="game-info">
+                            <h3>摩托疾驰</h3>
+                            <p>摩托竞速，灵活操控，风驰电掣。</p>
+                            <div class="game-meta"><span>⭐ 8.3</span><span>共7.6千人玩</span></div>
+                            <a href="#" class="play-btn">立即启动</a>
+                        </div>
+                    </article>
+                    <article class="game-card">
+                        <div class="game-thumb"><i>🌃</i></div>
+                        <div class="game-info">
+                            <h3>午夜追逐</h3>
+                            <p>深夜城市追逐战，躲避警车极限逃亡。</p>
+                            <div class="game-meta"><span>⭐ 8.9</span><span>共1.1万人玩</span></div>
+                            <a href="#" class="play-btn">立即启动</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 游戏指南与技巧 -->
+        <section class="section" id="guide">
+            <div class="container feature-flex">
+                <div class="feature-main">
+                    <div class="content-block">
+                        <h3>🎮 赛车游戏在线玩：从入门到高手</h3>
+                        <p>网页版赛车游戏已经发展得相当成熟。得益于HTML5和WebGL技术，如今在线赛车游戏在画质和操作体验上已经接近传统桌面游戏。无论你是想快速来一局放松心情，还是想深入研究赛车物理，在线赛车游戏都能满足你的需求。</p>
+                        <p><strong>为什么选择在线赛车游戏？</strong> 无需安装、配置要求低、即点即玩。大多数游戏支持键盘或手柄操作，部分还提供了多人在线对战功能。对于新手而言，可以先从辅助线开启的赛道模式练习，逐渐掌握刹车点和过弯路线。</p>
+                        <ul>
+                            <li><strong>漂移入门：</strong> 入弯前重刹，打方向同时拉手刹（或按空格），感受车尾滑动后反打方向并给油。</li>
+                            <li><strong>走线技巧：</strong> 外-内-外的过弯路线是最快且最稳定的选择。</li>
+                            <li><strong>视野控制：</strong> 视线看向远处弯心，不要紧贴车头。</li>
+                        </ul>
+                    </div>
+                    <div class="info-highlight">
+                        <strong>💡 新手建议：</strong> 刚开始游玩时，建议使用“辅助刹车”和“稳定控制”选项，熟悉赛道后再逐步关闭辅助系统，获得更纯粹的驾驶体验。
+                    </div>
+                </div>
+                <aside class="feature-side">
+                    <div class="content-block">
+                        <h3>🏆 本周热门榜单</h3>
+                        <ul class="rank-list">
+                            <li><span class="rank-num">1</span><span class="rank-name">极速漂移</span><span class="rank-tag">3D</span></li>
+                            <li><span class="rank-num">2</span><span class="rank-name">街头狂飙</span><span class="rank-tag">竞速</span></li>
+                            <li><span class="rank-num">3</span><span class="rank-name">经典方程式</span><span class="rank-tag">模拟</span></li>
+                            <li><span class="rank-num">4</span><span class="rank-name">午夜追逐</span><span class="rank-tag">动作</span></li>
+                            <li><span class="rank-num">5</span><span class="rank-name">越野拉力赛</span><span class="rank-tag">越野</span></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 分类特色推荐 -->
+        <section class="section" style="padding-top:0;">
+            <div class="container">
+                <h2 class="section-title">🛠️ 不同风格 · 总有你的赛道</h2>
+                <div class="feature-flex">
+                    <div class="feature-main" style="flex:1;">
+                        <div class="content-block">
+                            <h3>🏎️ 3D模拟类</h3>
+                            <p>追求真实驾驶体验，包含仪表盘视角、手动挡、轮胎磨损等细节。适合赛车爱好者及模拟玩家。</p>
+                        </div>
+                    </div>
+                    <div class="feature-main" style="flex:1;">
+                        <div class="content-block">
+                            <h3>⚡ 街机爽快类</h3>
+                            <p>上手简单，速度感强烈，碰撞和漂移特效夸张。适合追求刺激的休闲玩家。</p>
+                        </div>
+                    </div>
+                    <div class="feature-main" style="flex:1;">
+                        <div class="content-block">
+                            <h3>👥 多人对战</h3>
+                            <p>在线匹配全球玩家，实时对战，争夺排行榜名次。部分游戏支持房间模式，可邀请好友同玩。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题FAQ -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">❓ 赛车游戏在线玩 - 常见问题</h2>
+                <div class="faq-item">
+                    <div class="faq-question">这些游戏需要下载安装吗？</div>
+                    <div class="faq-answer">完全不需要。所有推荐游戏均基于浏览器运行，点击“立即启动”即可在页面中直接游玩，不占用本地磁盘空间。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">我的电脑配置很低，能流畅运行吗？</div>
+                    <div class="faq-answer">大部分网页赛车游戏对硬件要求非常友好。只要你的电脑能够流畅播放高清视频，基本都能运行。部分3D游戏可能需要独立显卡，但我们也提供了低画质选项。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持手机和平板在线玩吗？</div>
+                    <div class="faq-answer">支持。本站所有游戏均适配触屏操作，在手机浏览器上也能获得不错的体验。建议使用横屏模式游玩，操作空间更大。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">为什么有的游戏加载比较慢？</div>
+                    <div class="faq-answer">首次加载需要缓存游戏资源，通常在几秒至半分钟之间。如果长时间未加载完成，建议刷新页面或更换网络环境。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">游戏合作</a>
+                <a href="#">联系邮箱</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <p>© 2025 极速车库 - 赛车游戏在线玩平台 | 所有游戏版权归原作者所有</p>
+        </div>
+    </footer>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
